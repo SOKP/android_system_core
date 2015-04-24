@@ -726,9 +726,9 @@ void do_update_signature(zipfile_t zip, char *fn)
 void do_update(usb_handle *usb, char *fn, int erase_first)
 {
     void *zdata;
-    unsigned zsize;
+    unsigned zsize = 0;
     void *data;
-    unsigned sz;
+    unsigned sz = 0;
     zipfile_t zip;
     int fd;
     int rc;
@@ -805,7 +805,7 @@ void do_flashall(usb_handle *usb, int erase_first)
 {
     char *fname;
     void *data;
-    unsigned sz;
+    unsigned sz = 0;
     struct fastboot_buffer buf;
     size_t i;
 
